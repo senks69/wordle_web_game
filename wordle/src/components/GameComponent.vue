@@ -147,33 +147,33 @@ methods: {
     });
     },
     onKeyDown(e) {
-    // Backspace handler
-    if (this.game_status != "not finished") {
-        this.showToast("warning", "Игра уже завершена")
-        return
-    }
-    if(e.keyCode == 8){
-        let item = this.getCurrentItem()
-        if(this.currentKey%5==0 || (this.currentKey%5==4 && item.text != "")) {
-        item.text = ""
-        return
+        // Backspace handler
+        if (this.game_status != "not finished") {
+            this.showToast("warning", "Игра уже завершена")
+            return
         }
-        this.currentKey--
-        item = this.getCurrentItem()
-        item.text = ""
-    }
-    // Letters handler
-    if(this.isLetter(e.keyCode)){
-        const item = this.getCurrentItem()
-        if(this.currentKey%5==4 && item.text != "") return
-        item.text = e.key
-        if(this.currentKey%5==4) return
-        this.currentKey++
-    }
-    // Enter handler
-    if(e.keyCode == 13){
-        this.submit()
-    }
+        if(e.keyCode == 8){
+            let item = this.getCurrentItem()
+            if(this.currentKey%5==0 || (this.currentKey%5==4 && item.text != "")) {
+            item.text = ""
+            return
+            }
+            this.currentKey--
+            item = this.getCurrentItem()
+            item.text = ""
+        }
+        // Letters handler
+        if(this.isLetter(e.keyCode)){
+            const item = this.getCurrentItem()
+            if(this.currentKey%5==4 && item.text != "") return
+            item.text = e.key
+            if(this.currentKey%5==4) return
+            this.currentKey++
+        }
+        // Enter handler
+        if(e.keyCode == 13){
+            this.submit()
+        }
     },
 },
 created() {

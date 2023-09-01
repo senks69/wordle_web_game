@@ -30,6 +30,7 @@
   <a href="#games-rules">Game's rules</a> •
   <a href="#installation">Installation</a> •
   <a href="#launch">Launch</a> •
+  <a href="#start-with-docker">Start with docker</a> •
   <a href="#algorithms">Algorithms</a> •
   <a href="#about-project">About project</a> •
   <a href="#about-me">About me</a>
@@ -93,6 +94,15 @@ $ npm run serve
 - to run database
 ```bash
 $ mongod --dbpath ./database
+```
+
+## Start with docker
+
+Also you can install and run project with docker:
+```bash
+$ git clone https://github.com/psihoshlem/wordle_web_game.git
+$ cd wordle_web_game
+$ docker-compose up -d
 ```
 
 ## Algorithms

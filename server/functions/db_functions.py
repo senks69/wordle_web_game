@@ -1,7 +1,7 @@
 from pymongo import MongoClient
 from functions.words_functions import convert_word
 
-client = MongoClient('mongodb://localhost:27017')
+client = MongoClient('mongodb://db:27017')
 db = client.wordle_data
 collection = db.games_data
 

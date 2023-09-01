@@ -1,0 +1,29 @@
+version: '3'
+services:
+  client:
+    build:
+      context: ./wordle
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    networks:
+      - wordle_network
+
+  server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    networks:
+      - wordle_network
+
+  db:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    networks:
+      - wordle_network 
+
+networks:
+  wordle_network:
